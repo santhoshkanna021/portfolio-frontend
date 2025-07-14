@@ -371,7 +371,7 @@ body {
 /* ... existing global styles ... */
 
 /* ✅ Responsive for mobile */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   * {
     box-sizing: border-box;
   }
