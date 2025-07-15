@@ -401,19 +401,7 @@ body {
     width: 100%;
   }
 
-  .social-links {
-    display: flex;
-    flex-direction: column; /* Stack vertically */
-    align-items: center;    /* Center horizontally */
-    gap: 10px;              /* Space between icons */
-    margin-top: 1rem;
-  }
-
-  .social-links a img {
-    width: 40px;            /* Adjust icon size for mobile */
-    height: auto;
-  }
-
+  
 
   .projects-container {
     display: flex;
