@@ -369,7 +369,7 @@ body {
 }
 
 /* ✅ Mobile Responsive + Reduced Width + Centered */
-@media (max-width: 650px) {
+@media (max-width: 430px) {
   * {
     box-sizing: border-box;
   }
