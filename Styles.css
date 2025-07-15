@@ -368,4 +368,80 @@ body {
   padding: 60px;
 }
 
+/* ✅ Mobile Responsive + Reduced Width + Centered */
+@media (max-width: 650px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .project-card {
+    width: 90%;
+    max-width: 22rem; /* ~352px */
+    margin: 0 auto 1.25rem;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .contact-form {
+    width: 90%;
+    max-width: 22rem; /* ~352px */
+    margin: 0 auto;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .contact-form button {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
 
