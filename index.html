@@ -6,11 +6,6 @@
   <title>Portfolio</title>
   <link rel="stylesheet" href="Styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-
-
-
-  <!-- Font Awesome for icons -->
-  
 </head>
 <body>
 
@@ -36,23 +31,21 @@
       <h1>Santhoshkanna</h1>
       <h2>And I'm a <span class="highlight">Fullstack Developer</span></h2>
       <p class="desc">
-      "I specialize in building scalable and dynamic web applications using the MERN stack (MongoDB, Express.js, React.js, and Node.js). I’m passionate about creating clean, responsive, and accessible user interfaces backed by robust APIs — ready to turn innovative ideas into full-stack solutions."
+        I specialize in building scalable and dynamic web applications using the MERN stack (MongoDB, Express.js, React.js, and Node.js). I’m passionate about creating clean, responsive, and accessible user interfaces backed by robust APIs — ready to turn innovative ideas into full-stack solutions.
       </p>
       <div class="social-buttons">
-  <a href="https://www.linkedin.com/in/santhoshkanna021" target="_blank" rel="noopener noreferrer">
-    <img src="static/images/linkedin-in.svg" alt="LinkedIn">
-  </a>
-  <a href="https://github.com/santhoshkanna021" target="_blank" rel="noopener noreferrer">
-    <img src="static/images/Group 15.svg" alt="GitHub">
-  </a>
-</div>
-
+        <a href="https://www.linkedin.com/in/santhoshkanna021" target="_blank" rel="noopener noreferrer">
+          <img src="static/images/linkedin-in.svg" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/santhoshkanna021" target="_blank" rel="noopener noreferrer">
+          <img src="static/images/Group 15.svg" alt="GitHub">
+        </a>
+      </div>
       <br>
-      <a href="{{ url_for('static', filename='Santhoshkanna_CV.pdf') }}" class="btn-download">Download CV</a>
+      <a href="static/Santhoshkanna_CV.pdf" class="btn-download" download>Download CV</a>
     </div>
     <div class="hero-right">
       <img src="static/images/Banner Image.png" alt="Developer">
-
     </div>
   </header>
 
@@ -83,93 +76,67 @@
   </section>
 
   <!-- Skills Section -->
-<section class="skills-section" id="skills">
-  <h2 class="section-title">My <span>Skills</span></h2>
-
-  <div class="skills-container">
-    <div class="skill-card">
-      <h3>HTML5</h3>
-      <p>80%</p>
+  <section class="skills-section" id="skills">
+    <h2 class="section-title">My <span>Skills</span></h2>
+    <div class="skills-container">
+      <div class="skill-card"><h3>HTML5</h3><p>80%</p></div>
+      <div class="skill-card"><h3>CSS3</h3><p>75%</p></div>
+      <div class="skill-card"><h3>Node and Express</h3><p>60%</p></div>
+      <div class="skill-card"><h3>JavaScript</h3><p>50%</p></div>
+      <div class="skill-card"><h3>React</h3><p>75%</p></div>
+      <div class="skill-card"><h3>MongoDB</h3><p>60%</p></div>
     </div>
-    <div class="skill-card">
-      <h3>CSS3</h3>
-      <p>75%</p>
-    </div>
-    <div class="skill-card">
-      <h3>Node and Express</h3>
-      <p>60%</p>
-    </div>
-    <div class="skill-card">
-      <h3>JavaScript</h3>
-      <p>50%</p>
-    </div>
-    <div class="skill-card">
-      <h3>React</h3>
-      <p>75%</p>
-    </div>
-    <div class="skill-card">
-      <h3>MongoDB</h3>
-      <p>60%</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Projects Section -->
-<section class="projects-section" id="projects">
-  <h2 class="section-title">My <span>Projects</span></h2>
-  <div class="projects-container">
-    
-    <!-- Project 1: Movie App -->
-    <div class="project-card">
-      <h3>Movie App</h3>
-      <p>A full stack movie search application built using React.js, Tailwind CSS, and TMDB API. Users can explore movies with real-time search and dynamic routing.</p>
-      <a href="https://movie-app-one-inky-56.vercel.app/" class="project-btn" target="_blank">View Project</a>
+  <section class="projects-section" id="projects">
+    <h2 class="section-title">My <span>Projects</span></h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Movie App</h3>
+        <p>A full stack movie search application built using React.js, Tailwind CSS, and TMDB API.</p>
+        <a href="https://movie-app-one-inky-56.vercel.app/" class="project-btn" target="_blank">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <img src="static/images/portfolio-site.png" alt="Portfolio Website" />
+        <h3>Personal Portfolio Website</h3>
+        <p>A responsive full stack portfolio site built with HTML, CSS, JavaScript, and a Node backend with contact form integration.</p>
+        <a href="#" class="project-btn">View Project</a>
+      </div>
     </div>
-
-    <!-- Project 2: Portfolio Website -->
-    <div class="project-card">
-      <img src="{{ url_for('static', filename='images/portfolio-site.png') }}" alt="Portfolio Website" />
-      <h3>Personal Portfolio Website</h3>
-      <p>A responsive full stack portfolio site built with HTML, CSS, JavaScript, and a Flask backend with contact form integration and MySQL storage.</p>
-      <a href="#" class="project-btn">View Project</a>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- Contact Section -->
   <section class="contact-section" id="contact">
     <h2 class="section-title">Contact</h2>
     <div class="contact-container">
       <div class="contact-info">
-        <p><i class="fas fa-phone-alt"></i> +91 6379999590</p>
-        <p><i class="fas fa-envelope"></i> santhoshkannar802@gmail.com</p>
-        <p><i class="fas fa-map-marker-alt"></i> Coimbatore, Tamil Nadu, India</p>
+        <p>📞 +91 6379999590</p>
+        <p>📧 santhoshkannar802@gmail.com</p>
+        <p>📍 Coimbatore, Tamil Nadu, India</p>
       </div>
 
-      <form class="contact-form" method="POST" action="https://portfolio-backend-1-24d7.onrender.com/send">
-  <input type="text" name="name" placeholder="Full Name" required />
-  <input type="email" name="email" placeholder="Email Address" required />
-  <div class="half-row">
-    <input type="text" name="phone" placeholder="Phone Number" />
-    <input type="text" name="subject" placeholder="Subject" />
-  </div>
-  <textarea name="message" placeholder="Your Message" rows="4"></textarea>
-  <button type="submit">Send</button>
-</form>
-
-
+      <!-- ✅ No action; handled by JS -->
+      <form class="contact-form" id="contact-form">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <div class="half-row">
+          <input type="text" name="phone" placeholder="Phone Number" />
+          <input type="text" name="subject" placeholder="Subject" />
+        </div>
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send</button>
+      </form>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <p>Copyright © 2025 | All Rights Reserved by Santhoshkanna</p>
+    <p>© 2025 | All Rights Reserved by Santhoshkanna</p>
   </footer>
 
-
- <script src="script.js"></script>
-
+  <!-- External JS -->
+  <script src="script.js"></script>
 </body>
 </html>
