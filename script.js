@@ -1,26 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   // ✅ Toggle 'Read More' in About Section
   const readMoreBtn = document.querySelector(".btn-read");
-  if (readMoreBtn) {
+  const moreText = document.getElementById("more-text");
+
+  if (readMoreBtn && moreText) {
     readMoreBtn.addEventListener("click", (event) => {
       event.preventDefault();
-      const moreText = document.getElementById("more-text");
 
-      if (moreText.style.display === "none" || moreText.style.display === "") {
-        moreText.style.display = "inline";
-        readMoreBtn.textContent = "Read Less...";
-      } else {
-        moreText.style.display = "none";
-        readMoreBtn.textContent = "Read More...";
-      }
+      const isHidden = moreText.style.display === "none" || moreText.style.display === "";
+
+      moreText.style.display = isHidden ? "inline" : "none";
+      readMoreBtn.textContent = isHidden ? "Read Less..." : "Read More...";
     });
   }
 
   // ✅ Smooth Scroll for internal anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
-      const target = document.querySelector(this.getAttribute("href"));
+      const targetId = this.getAttribute("href");
+      const target = document.querySelector(targetId);
+
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -32,42 +31,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form");
 
   if (form) {
-    form.addEventListener("submit", async function (e) {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const phone = form.phone.value.trim();
-      const subject = form.subject.value.trim();
-      const message = form.message.value.trim();
+      const name = form.name?.value.trim();
+      const email = form.email?.value.trim();
+      const phone = form.phone?.value.trim();
+      const subject = form.subject?.value.trim();
+      const message = form.message?.value.trim();
 
       // Basic client-side validation
       if (!name || !email || !message) {
-        alert("Please fill in all required fields.");
+        alert("Please fill in all required fields (Name, Email, and Message).");
         return;
       }
 
       const data = { name, email, phone, subject, message };
 
       try {
-        const res = await fetch("https://portfolio-backend-vfpr.vercel.app/api/contact", {
+        const res = await fetch("https://portfolio-backend-vfpr.vercel.app", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json"
+          },
           body: JSON.stringify(data)
         });
 
         if (res.ok) {
-          window.location.href = "thankyou.html"; // ✅ Redirect on success
+          window.location.href = "thankyou.html";
         } else {
-          const errData = await res.text();
-          console.error("❌ Error Response:", errData);
-          alert("❌ Message not sent. Server error.");
+          const errorText = await res.text();
+          console.error("❌ Server Error:", errorText);
+          alert("❌ Message not sent. Server error occurred.");
         }
       } catch (error) {
         console.error("❌ Network Error:", error);
-        alert("❌ Something went wrong. Please try again.");
+        alert("❌ Something went wrong. Please try again later.");
       }
     });
   }
-
 });
