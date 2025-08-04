@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = { name, email, phone, subject, message };
 
       try {
-        const res = await fetch("https://portfolio-backend-vfpr.vercel.app", {
+        const res = await fetch("https://portfolio-backend-vfpr.vercel.app/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data)
