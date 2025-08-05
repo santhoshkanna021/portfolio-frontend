@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const moreText = document.getElementById("more-text");
 
   if (readMoreBtn && moreText) {
-    readMoreBtn.addEventListener("click", (event) => {
-      event.preventDefault();
+    readMoreBtn.addEventListener("click", (e) => {
+      e.preventDefault();
 
       const isHidden = moreText.style.display === "none" || moreText.style.display === "";
 
@@ -15,14 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ✅ Smooth Scroll for internal anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      const targetId = this.getAttribute("href");
-      const target = document.querySelector(targetId);
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      const targetId = anchor.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
 
-      if (target) {
+      if (targetElement) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        targetElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       }
     });
   });
@@ -42,31 +45,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Basic client-side validation
       if (!name || !email || !message) {
-        alert("Please fill in all required fields (Name, Email, and Message).");
+        alert("⚠️ Please fill in Name, Email, and Message.");
         return;
       }
 
       const data = { name, email, phone, subject, message };
 
       try {
-        const res = await fetch("https://portfolio-backend-vfpr.vercel.app/", {
+        const res = await fetch("https://portfolio-backend-seven-kappa.vercel.app//", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(data)
+          body: JSON.stringify(data),
         });
-        
 
         if (res.ok) {
           window.location.href = "thankyou.html";
         } else {
-          const errorText = await res.text();
-          console.error("❌ Server Error:", errorText);
+          const errorMsg = await res.text();
+          console.error("❌ Server Error:", errorMsg);
           alert("❌ Message not sent. Server error occurred.");
         }
-      } catch (error) {
-        console.error("❌ Network Error:", error);
+      } catch (err) {
+        console.error("❌ Network Error:", err);
         alert("❌ Something went wrong. Please try again later.");
       }
     });
