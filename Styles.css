@@ -4,6 +4,8 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  
+  
 }
 
 body {
@@ -11,7 +13,9 @@ body {
   background-color: #f5f7fa;
   color: white;
   line-height: 1.6;
+  overflow-x: hidden;
 }
+  
 
 /* ------------------- Navbar ------------------- */
 .navbar {
@@ -240,7 +244,7 @@ body {
 .projects-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 150px;
   justify-content: center;
 }
 
